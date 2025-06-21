@@ -1,0 +1,24 @@
+{
+  "name": "js-proj-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hello": "node hello-world.js",
+    "bye": "node bye-world.js",
+    "test": "node test-world.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PTQuality/PW-Learning-Project.git"
+  },
+  "keywords": [
+    "PTQuality.pl"
+  ],
+  "author": "PTQuality.pl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PTQuality/PW-Learning-Project/issues"
+  },
+  "homepage": "https://github.com/PTQuality/PW-Learning-Project#readme"
+}
