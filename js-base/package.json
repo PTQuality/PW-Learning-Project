@@ -49,8 +49,17 @@
     "es3e1": "node exercises/S03/1.install.module.js",
     "es3e2": "node exercises/S03/2.classes.js",
     "es3e3": "node exercises/S03/3.file.operations.js",
-    "es3e4": "node exercises/S03/4.async.await.js"
+    "es3e4": "node exercises/S03/4.async.await.js",
+    "format": "prettier --write ."
   },
   "author": "jaktestowac.pl",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.6.0"
+  }
 }

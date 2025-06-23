@@ -1,7 +1,7 @@
 // Local Scope Example
 function anotherFunction() {
-    const localVariable = 5;
-    console.log(localVariable);
+  const localVariable = 5;
+  console.log(localVariable);
 }
 
 anotherFunction(); // Displays 5

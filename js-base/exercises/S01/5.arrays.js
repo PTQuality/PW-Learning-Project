@@ -10,10 +10,9 @@
 //// TODO:
 // here place your solution:
 
-const arrayOfWords = ['abc', 'def', 'gh'];
-console.log(arrayOfWords)
-console.log(`'${arrayOfWords[1]}'`)
-
+const arrayOfWords = ["abc", "def", "gh"];
+console.log(arrayOfWords);
+console.log(`'${arrayOfWords[1]}'`);
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise

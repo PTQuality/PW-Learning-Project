@@ -15,13 +15,6 @@ const nameValue = "John Doe";
 console.log(nameValue);
 console.log(numberValue);
 
-
-
-
-
-
-
-
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise
 
@@ -29,4 +22,3 @@ console.log(numberValue);
 // After running this script on console You should display:
 // John Doe
 // 12
-

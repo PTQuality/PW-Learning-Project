@@ -17,22 +17,20 @@
 // When async function is finished, then the result will be presented.
 // ... but how?
 
-
 // Lets see how to use async functions
 // Here is an example of async function, that after 2s will return some value:
 
-import { loadUserData, loadUserDataSync } from "./8.async.helpers.js"
-
+import { loadUserData, loadUserDataSync } from "./8.async.helpers.js";
 
 // when we have async function and we use it as normal function, we wont get valid result.
 
 // First lets use sync function:
 
-console.log('calling sync function:')
-const sampleData = loadUserDataSync()
-console.log('sampleData:', sampleData)
+console.log("calling sync function:");
+const sampleData = loadUserDataSync();
+console.log("sampleData:", sampleData);
 
-console.log('--------------------------------------')
+console.log("--------------------------------------");
 
 // Now lets see how async function will behave:
 
@@ -41,7 +39,7 @@ console.log('--------------------------------------')
 // const sampleDataFromAsync = loadUserData()
 // console.log('sampleDataFromAsync:', sampleDataFromAsync)
 
-console.log('Finished!')
+console.log("Finished!");
 
 // it will return following result on console:
 
@@ -50,7 +48,3 @@ console.log('Finished!')
 // loadUserData: entering Promise and waiting for 2 seconds...
 // sampleData: Promise { <pending> }
 // loadUserData: Promise done - returning value!
-
-
-
-

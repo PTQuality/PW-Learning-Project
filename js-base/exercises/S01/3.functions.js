@@ -13,18 +13,11 @@
 //// TODO:
 // here place your solution:
 
-
-function multiplicationOfTwoNumbers(numberOne, numberTwo){
-    return numberOne*numberTwo;
+function multiplicationOfTwoNumbers(numberOne, numberTwo) {
+  return numberOne * numberTwo;
 }
 
-console.log ("Result of multiplication: ", multiplicationOfTwoNumbers(3, 7))
-
-
-
-
-
-
+console.log("Result of multiplication: ", multiplicationOfTwoNumbers(3, 7));
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise

@@ -1,12 +1,11 @@
-import { loadUserData } from "./8.async.helpers.js"
+import { loadUserData } from "./8.async.helpers.js";
 
+console.log("----------------------------------------------------");
+console.log("Using async function:");
 
-console.log('----------------------------------------------------')
-console.log('Using async function:')
-
-console.log('calling async function with await...')
-const result = await loadUserData()
-console.log(result)
+console.log("calling async function with await...");
+const result = await loadUserData();
+console.log(result);
 
 // it will return following result on console:
 // calling async function with await...
@@ -15,11 +14,9 @@ console.log(result)
 // loadUserData: Promise done - returning value!
 // [ 'Dale', 'Harry S. Truman', 'Hawk' ]
 
-
-console.log('----------------------------------------------------')
-console.log('Using async function in another function:')
+console.log("----------------------------------------------------");
+console.log("Using async function in another function:");
 // another example with function, that uses async function:
-
 
 // function asyncCall() { // this will return: SyntaxError: Unexpected reserved word
 //   console.log('calling async function in asyncCall...')
@@ -30,12 +27,12 @@ console.log('Using async function in another function:')
 // we must use async:
 
 async function asyncCall() {
-  console.log('calling async function in asyncCall...')
-  const result = await loadUserData()
-  console.log(result)
+  console.log("calling async function in asyncCall...");
+  const result = await loadUserData();
+  console.log(result);
 }
 
-await asyncCall()
+await asyncCall();
 // it will return following result on console:
 // calling async function in asyncCall...
 // loadUserData: entering function
@@ -43,10 +40,7 @@ await asyncCall()
 // loadUserData: Promise done - returning value!
 // [ 'Dale', 'Harry S. Truman', 'Hawk' ]
 
-console.log('Finished!')
-
-
-
+console.log("Finished!");
 
 // --------------------------------------------------------
 // ADVANCED BONUS:
@@ -56,9 +50,8 @@ console.log('Finished!')
 // Promise is just a Promise of a result.
 // To get the result Promise need to be resolved:
 
-
 // const sampleData = loadUserData()
 
-// sampleData.then(realResult => { 
-//     console.log('realResult:', realResult) 
+// sampleData.then(realResult => {
+//     console.log('realResult:', realResult)
 // })

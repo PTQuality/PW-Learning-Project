@@ -14,16 +14,9 @@ const TestTypes = "integration tests";
 const resultPassed = "passed";
 let resultFailed = "failed";
 
-console.log ( TestTypes + ' ' + resultPassed + ' '+ resultFailed );
-console.log (`${TestTypes}: ${resultFailed}`);
-console.log (`${TestTypes}: ${resultPassed}`);
-
-
-
-
-
-
-
+console.log(TestTypes + " " + resultPassed + " " + resultFailed);
+console.log(`${TestTypes}: ${resultFailed}`);
+console.log(`${TestTypes}: ${resultPassed}`);
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise

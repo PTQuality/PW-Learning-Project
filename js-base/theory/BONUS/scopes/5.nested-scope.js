@@ -1,13 +1,13 @@
 // Nested Functions and Scopes
 function outerFunction() {
-    var outerVariable = "Outer variable";
+  var outerVariable = "Outer variable";
 
-    function innerFunction() {
-        console.log('innerFunction:', outerVariable);
-    }
+  function innerFunction() {
+    console.log("innerFunction:", outerVariable);
+  }
 
-    innerFunction(); // Displays "innerFunction: Outer variable"
-    console.log('outerFunction:', outerVariable); // Displays "outerFunction: Outer variable"
+  innerFunction(); // Displays "innerFunction: Outer variable"
+  console.log("outerFunction:", outerVariable); // Displays "outerFunction: Outer variable"
 }
 
 outerFunction();

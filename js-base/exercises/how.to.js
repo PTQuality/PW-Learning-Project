@@ -7,12 +7,6 @@
 //// TODO:
 // here place your solution:
 
-
-
-
-
-
-
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise
 
