@@ -13,6 +13,19 @@
 //// TODO:
 // here place your solution:
 
+const testUser = {
+  name: "test user",
+  address: "test@test.test",
+  password: "1234",
+};
+
+testUser["properties"] = ["write", "read"];
+
+console.log(testUser);
+console.log(testUser["name"]);
+testUser["name"] = "admin";
+console.log(testUser["name"]);
+
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise
 

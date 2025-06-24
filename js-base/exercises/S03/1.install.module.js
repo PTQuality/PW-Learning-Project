@@ -11,6 +11,8 @@
 //// TODO:
 // here place your solution:
 
+import { expect } from "chai"; // Using Expect style
+
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise and verification!
 

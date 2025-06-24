@@ -10,6 +10,16 @@
 //// TODO:
 // here place your solution:
 
+import { writeFileSync, readFileSync } from "fs";
+
+let fileName = "ex3";
+let extension = ".txt";
+let path = "./exercises/S03/" + fileName + extension;
+let stringInput = "Hello jaktestowac.pl!";
+
+writeFileSync(path, stringInput, JSON.stringify());
+console.log(readFileSync(path, { encoding: "utf8" }));
+
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise and verification!
 

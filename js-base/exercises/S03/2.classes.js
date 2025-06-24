@@ -17,6 +17,28 @@
 //// TODO:
 // here place your solution:
 
+class Human {
+  name = "Unknown";
+  age = 0;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  increaseAge() {
+    this.age++;
+  }
+
+  introduce() {
+    console.log(`Hi, my name is ${this.name} and my age is ${this.age}.`);
+  }
+}
+
+const human = new Human("Bob");
+human.increaseAge();
+human.increaseAge();
+human.introduce();
+
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise and verification!
 

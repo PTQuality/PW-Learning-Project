@@ -12,6 +12,10 @@
 //// TODO:
 // here place your solution:
 
+import { printer, userData } from "./helper.js";
+
+printer(userData);
+
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise
 
