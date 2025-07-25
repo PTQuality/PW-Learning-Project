@@ -1,12 +1,12 @@
-let clearDatabase = 1
+let clearDatabase = 1;
 
-console.log('clearDatabase === 1 is:', clearDatabase === 1)
+console.log("clearDatabase === 1 is:", clearDatabase === 1);
 
 // in if we check if condition is true
 if (clearDatabase === 1) {
-  console.log('Database was cleared!')
+  console.log("Database was cleared!");
 } else {
-  console.log('Database was not cleared!')
+  console.log("Database was not cleared!");
 }
 
 // Why we should use '===' instead of '=='?
@@ -21,29 +21,29 @@ if (clearDatabase === 1) {
 // FOR NOW LETS ONLY USE '==='
 
 // We can declare multiple cases:
-let someNumber = 1
+let someNumber = 1;
 
 if (someNumber < 0) {
-  console.log('someNumber < 0')
+  console.log("someNumber < 0");
 } else if (someNumber === 1) {
-  console.log('someNumber is 1')
+  console.log("someNumber is 1");
 } else {
-  console.log('someNumber > 1')
+  console.log("someNumber > 1");
 }
 
 // If we have multiple cases... then we can use switch:
-let someOtherNumber = 1
+let someOtherNumber = 1;
 
 switch (someOtherNumber) {
   case 1:
-    console.log('someOtherNumber is 1')
-    break
+    console.log("someOtherNumber is 1");
+    break;
   case 2:
   case 3:
-    console.log('someOtherNumber is 2 or 3')
-    break
+    console.log("someOtherNumber is 2 or 3");
+    break;
   default:
-    console.log('someOtherNumber is unknown (neither 1, 2 nor 3)')
+    console.log("someOtherNumber is unknown (neither 1, 2 nor 3)");
 }
 // ... but in switch we can not use '>' or '<'!
 

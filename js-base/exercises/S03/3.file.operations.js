@@ -4,31 +4,25 @@
 // 3. Write code to read content of created file "ex3.txt"
 // 4. Display content of that file on console.
 
-
 // to test your solution in terminal You can run following command:
 // npm run es3e3
 
 //// TODO:
 // here place your solution:
 
+import { writeFileSync, readFileSync } from "fs";
 
+let fileName = "ex3";
+let extension = ".txt";
+let path = "./exercises/S03/" + fileName + extension;
+let stringInput = "Hello jaktestowac.pl!";
 
-
-
-
-
-
-
-
-
-
-
-
-
+writeFileSync(path, stringInput);
+const dataFromFile = readFileSync(path, { encoding: "utf8" });
+console.log(dataFromFile);
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise and verification!
-
 
 // Expected output:
 // Hello jaktestowac.pl!

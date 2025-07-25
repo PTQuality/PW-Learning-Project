@@ -1,18 +1,19 @@
 // Before we created simple objects:
 const dale = {
-  name: 'Dale Cooper',
-  age: 40
-}
+  name: "Dale Cooper",
+  age: 40,
+};
 
 // we can also create objects using classes.
 
 // Example of class:
 
 class Human {
-  name = 'Ralph' // class property
+  name = "Ralph"; // class property
 
-  sayHello() {  // class method
-    console.log(`Hello! Im ${this.name} and Im pleased to meet You!`)
+  sayHello() {
+    // class method
+    console.log(`Hello! Im ${this.name} and Im pleased to meet You!`);
   }
 }
 
@@ -32,7 +33,7 @@ class Human {
 // Instance is a solid object of a class.
 
 // To create an instance we use keyword "new":
-new Human()
+new Human();
 // Now we have created an OBJECT.
 
 // Lets stop for a moment...
@@ -47,49 +48,45 @@ new Human()
 // ... and now we can get back to our 'new Human()'
 
 // Now we can assign instance to variable:
-const human = new Human()
+const human = new Human();
 
 // Human - is a class, that we declare above
 // human - is a variable
 
 // ...and use everything what Human has to offer (so methods, properties etc):
-console.log('----------------------------------------------------')
-console.log('Result of human.sayHello():')
-human.sayHello()
+console.log("----------------------------------------------------");
+console.log("Result of human.sayHello():");
+human.sayHello();
 
 // That will result in:
 // Hello! Im Ralph and Im pleased to meet You!
 
-
-
 // we can also access Human property:
-console.log('Result of human.name:')
-console.log(human.name)
+console.log("Result of human.name:");
+console.log(human.name);
 
-console.log('----------------------------------------------------')
+console.log("----------------------------------------------------");
 // or we can change property:
-human.name = 'Jonathan'
+human.name = "Jonathan";
 
 // and now it will return new value:
-console.log('Result of human.sayHello() after name change:')
-human.sayHello()
-console.log('Result of human.name after name change:')
-console.log(human.name)
+console.log("Result of human.sayHello() after name change:");
+human.sayHello();
+console.log("Result of human.name after name change:");
+console.log(human.name);
 
-
-console.log('----------------------------------------------------')
-console.log('Lets check new human...')
+console.log("----------------------------------------------------");
+console.log("Lets check new human...");
 // but new human will have default value of name:
-const human2 = new Human()
-console.log('Result of human2.sayHello():')
-human2.sayHello()
-console.log('Result of human.sayHello():')
-human.sayHello()
+const human2 = new Human();
+console.log("Result of human2.sayHello():");
+human2.sayHello();
+console.log("Result of human.sayHello():");
+human.sayHello();
 
+console.log("----------------------------------------------------");
+console.log("Result of console.log(human):");
+console.log(human);
 
-console.log('----------------------------------------------------')
-console.log('Result of console.log(human):')
-console.log(human)
-
-console.log('Result of JSON.stringify(human):')
-console.log(JSON.stringify(human))
+console.log("Result of JSON.stringify(human):");
+console.log(JSON.stringify(human));

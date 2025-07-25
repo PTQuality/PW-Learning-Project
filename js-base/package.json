@@ -49,8 +49,41 @@
     "es3e1": "node exercises/S03/1.install.module.js",
     "es3e2": "node exercises/S03/2.classes.js",
     "es3e3": "node exercises/S03/3.file.operations.js",
-    "es3e4": "node exercises/S03/4.async.await.js"
+    "es3e4": "node exercises/S03/4.async.await.js",
+    "l01e01": "node exercises/ExtraExercises/SummaryExercises/l01e01.js",
+    "l01e02": "node exercises/ExtraExercises/SummaryExercises/l01e02.js",
+    "l01e03": "node exercises/ExtraExercises/SummaryExercises/l01e03.js",
+    "l01e04": "node exercises/ExtraExercises/SummaryExercises/l01e04.js",
+    "l01e05": "node exercises/ExtraExercises/SummaryExercises/l01e05.js",
+    "l01e06": "node exercises/ExtraExercises/SummaryExercises/l01e06.js",
+    "l01e07": "node exercises/ExtraExercises/SummaryExercises/l01e07.js",
+    "l01e08": "node exercises/ExtraExercises/SummaryExercises/l01e08.js",
+    "l01e09": "node exercises/ExtraExercises/SummaryExercises/l01e09.js",
+    "l01e10": "node exercises/ExtraExercises/SummaryExercises/l01e10.js",
+    "l01e11": "node exercises/ExtraExercises/SummaryExercises/l01e11.js",
+    "l01e12": "node exercises/ExtraExercises/SummaryExercises/l01e12.js",
+    "l01e13": "node exercises/ExtraExercises/SummaryExercises/l01e13.js",
+    "l01e14": "node exercises/ExtraExercises/SummaryExercises/l01e14.js",
+    "l01e15": "node exercises/ExtraExercises/SummaryExercises/l01e15.js",
+    "l01e16": "node exercises/ExtraExercises/SummaryExercises/l01e16.js",
+    "l01e17": "node exercises/ExtraExercises/SummaryExercises/l01e17.js",
+    "l01e18": "node exercises/ExtraExercises/SummaryExercises/l01e18.js",
+    "l01e19": "node exercises/ExtraExercises/SummaryExercises/l01e19.js",
+    "l01e20": "node exercises/ExtraExercises/SummaryExercises/l01e20.js",
+    "format": "prettier --write ."
   },
   "author": "jaktestowac.pl",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.6.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "chai": "^5.2.0"
+  }
 }

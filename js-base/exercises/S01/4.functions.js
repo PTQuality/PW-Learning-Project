@@ -8,22 +8,14 @@
 // to test your solution in terminal You can run following command:
 // npm run es1e4
 
-
 //// TODO:
 // here place your solution:
 
-function joinStrings(stringOne , stringTwo, stringThree = "!"){
-    return (`${stringOne} ${stringTwo} ${stringThree} `);
+function joinStrings(stringOne, stringTwo, stringThree = "!") {
+  return `${stringOne} ${stringTwo} ${stringThree} `;
 }
 
-console.log (joinStrings("Hello", "World"))
-
-
-
-
-
-
-
+console.log(joinStrings("Hello", "World"));
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise

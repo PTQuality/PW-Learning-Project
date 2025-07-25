@@ -19,20 +19,34 @@
 // here place your solution:
 
 function printPlayersState(health) {
-
+  switch (true) {
+    case health >= 100: {
+      console.log("Player is alive and at full health!");
+      break;
+    }
+    case health >= 10: {
+      console.log("Player is alive and at ok health.");
+      break;
+    }
+    case health >= 1: {
+      console.log("Player is alive and at very poor health!");
+      break;
+    }
+    default: {
+      console.log("Player is dead.");
+      break;
+    }
+  }
 }
-//another change
-
-
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise and verification!
 
-printPlayersState(100)
-printPlayersState(60)
-printPlayersState(0)
-printPlayersState(5)
-printPlayersState(-1)
+printPlayersState(100);
+printPlayersState(60);
+printPlayersState(0);
+printPlayersState(5);
+printPlayersState(-1);
 
 // Expected output:
 // After running this script on console You should receive:

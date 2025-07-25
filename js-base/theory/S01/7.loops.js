@@ -25,7 +25,7 @@ for (let index = 0; index < anArray.length; index++) {
 // element: 3 false
 
 // foreach is also a loop, and its mostly used to iterate through an array:
-anArray.forEach((element) => {
+anArray.forEach(element => {
   console.log("forEach element:", element);
 });
 

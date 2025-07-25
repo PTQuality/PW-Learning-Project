@@ -9,17 +9,12 @@
 //// TODO:
 // here place your solution:
 
-function elementChecker(anArray) {
-
-}
-
-
-
+function elementChecker(anArray) {}
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise
 
-elementChecker([1, 2, 'test'])
+elementChecker([1, 2, "test"]);
 
 // Expected output:
 // Expected output of this script is following info on console:

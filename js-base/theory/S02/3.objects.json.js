@@ -3,9 +3,9 @@
 
 // This is object in JS:
 const simpleObject = {
-    propertyName: 1,
-    otherPropertyName: 'some other value'
-}
+  propertyName: 1,
+  otherPropertyName: "some other value",
+};
 
 // ...and sample JSON You can find in file "3.sample.json"
 

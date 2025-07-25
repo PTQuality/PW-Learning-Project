@@ -1,7 +1,7 @@
 // Function Parameters Scope
 function add(a, b) {
-    const result = a + b;
-    console.log(result);
+  const result = a + b;
+  console.log(result);
 }
 
 add(2, 3); // Displays 5
