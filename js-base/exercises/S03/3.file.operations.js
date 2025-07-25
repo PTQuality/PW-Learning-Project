@@ -17,8 +17,9 @@ let extension = ".txt";
 let path = "./exercises/S03/" + fileName + extension;
 let stringInput = "Hello jaktestowac.pl!";
 
-writeFileSync(path, stringInput, JSON.stringify());
-console.log(readFileSync(path, { encoding: "utf8" }));
+writeFileSync(path, stringInput);
+const dataFromFile = readFileSync(path, { encoding: "utf8" });
+console.log(dataFromFile);
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise and verification!
