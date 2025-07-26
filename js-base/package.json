@@ -70,6 +70,10 @@
     "l01e18": "node exercises/ExtraExercises/SummaryExercises/l01e18.js",
     "l01e19": "node exercises/ExtraExercises/SummaryExercises/l01e19.js",
     "l01e20": "node exercises/ExtraExercises/SummaryExercises/l01e20.js",
+    "l01e21": "node exercises/ExtraExercises/SummaryExercises/l01e21.js",
+    "l01e22": "node exercises/ExtraExercises/SummaryExercises/l01e22.js",
+    "l01e23": "node exercises/ExtraExercises/SummaryExercises/l01e23.js",
+    "l01e24": "node exercises/ExtraExercises/SummaryExercises/l01e24.js",
     "format": "prettier --write ."
   },
   "author": "jaktestowac.pl",
