@@ -69,9 +69,3 @@ myTaskList.removeTask("Laundry"); // Remove task
 
 console.log("\n=== After removing 'Laundry' ===");
 myTaskList.displayAllTasks();
-
-// Expected output:
-// After running this script on console You should display:
-// All tasks with their names, descriptions and statuses
-// Task "Zakupy" should have status "zrobione"
-// Task "Pranie" should have status "do zrobienia"
