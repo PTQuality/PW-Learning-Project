@@ -8,20 +8,15 @@
 //    - Has method `countProductsInCategory(category)` that counts products in given category
 //    - Logs total number of products and their value after each add/remove operation
 //    - Has method `displayPurchaseReport()` that shows all products with their details
-// 3. Test your classes with the provided test data
-// 4. Make sure all methods work correctly and display appropriate information
+// 3. Test your classes with the provided test data below
+// 4. Make sure removeProduct handles cases when product doesn't exist
 
-// Expected behavior:
-// - After each addProduct/removeProduct operation, display total products count and total value
-// - calculateTotalPrice() should return sum of all product prices
-// - countProductsInCategory() should return number of products in specified category
-// - removeProduct() should remove first product found with given name
-// - displayPurchaseReport() should show formatted list of all products in cart
+// to test your solution in terminal You can run following command:
+// npm run l01e20
 
-// To test your solution in terminal, run:
-// npm run [appropriate-script-name]
+//// TODO:
+// here place your solution:
 
-// Place your solution here:
 class Product {
   constructor(name, price, category) {
     this.name = name;
@@ -31,7 +26,9 @@ class Product {
 }
 
 class Cart {
-  products = [];
+  constructor() {
+    this.products = [];
+  }
   addProduct(product) {
     this.products.push(product);
     console.log(`${product.name} was added to the cart`);
@@ -53,21 +50,21 @@ class Cart {
       console.log("");
     } else {
       console.log(
-        `WARNING!!  Tried to remove "${productName}", but coudn't find it.`
+        `WARNING!!  Tried to remove "${productName}", but couldn't find it.`
       );
     }
   }
   calculateTotalPrice() {
     let sum = 0;
-    for (let i = 0; i < this.products.length; i++) {
-      sum += this.products[i].price;
+    for (let product of this.products) {
+      sum += product.price;
     }
     return sum;
   }
   countProductsInCategory(category) {
     let countOfproductsInCategory = 0;
-    for (let i = 0; i < this.products.length; i++) {
-      if (category === this.products[i].category) {
+    for (let product of this.products) {
+      if (category === product.category) {
         countOfproductsInCategory += 1;
       }
     }
@@ -77,11 +74,14 @@ class Cart {
   displayPurchaseReport() {
     console.log("=================================");
     console.log("Currently in the cart:");
-    for (let i = 0; i < this.products.length; i++) {
-      console.log(`- ${this.products[i].name}`);
+    for (let product of this.products) {
+      console.log(`- ${product.n}`);
     }
   }
 }
+
+//// DONT MODIFY CODE BELOW!
+// Here You will find expected result of exercise
 
 // Test data to use:
 const cart = new Cart();
@@ -94,8 +94,5 @@ cart.addProduct(product3);
 console.log(cart.calculateTotalPrice()); // Should output: 3200
 console.log(cart.countProductsInCategory("Electronics")); // Should output: 2
 cart.removeProduct("Mouse");
-cart.removeProduct("Mouse1");
+cart.removeProduct("NonExistentProduct"); // Should handle gracefully
 cart.displayPurchaseReport();
-
-const arr = [{ name: "test" }, { name: "test2" }];
-console.log(arr.findIndex(name => name.name === "test2"));
