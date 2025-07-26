@@ -25,21 +25,17 @@
 const peselWeights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
 
 function validatePESEL(pesel) {
-  const weightedDigits = [];
   if (/^\d{11}$/.test(pesel)) {
-    const peselInArray = pesel.split("");
-    const peselForWeightsCalculation = peselInArray.slice(0, 10);
-
-    peselForWeightsCalculation.forEach((element, index) => {
-      weightedDigits.push(Number(element) * peselWeights[index]);
-    });
-    let checksum =
-      (10 - (weightedDigits.reduce((sum, num) => sum + num) % 10)) % 10;
-    let arePeselDigitsValid =
-      checksum === Number(pesel.charAt(pesel.length - 1));
-    return arePeselDigitsValid
-      ? { status: arePeselDigitsValid, message: "PESEL is valid." }
-      : { status: arePeselDigitsValid, message: "PESEL is not correct." };
+    let sum = 0;
+    for (let i = 0; i < 10; i++) {
+      sum += Number(pesel[i] * peselWeights[i]);
+    }
+    const checksum = (10 - (sum % 10)) % 10;
+    if (checksum === Number(pesel[10])) {
+      return { status: true, message: "PESEL is valid." };
+    } else {
+      return { status: false, message: "PESEL is not correct." };
+    }
   } else {
     return {
       status: false,
