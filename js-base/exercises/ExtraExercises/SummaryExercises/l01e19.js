@@ -54,36 +54,42 @@ function validateDate(pesel) {
   const day = Number(pesel.slice(4, 6));
 
   let whatCentury = 1900;
-  switch (month) {
-    case (1, 12):
-      whatCentury = 1900;
-      break;
-    case (21, 32):
-      whatCentury = 2000;
-      break;
-    case (41, 52):
-      whatCentury = 2100;
-      break;
-    default:
-      break;
+  let actualMonth = 1;
+  let isDateValid = false;
+  if (month <= 12) {
+    whatCentury = 1900;
+  } else if (month >= 21 && month <= 32) {
+    actualMonth = month - 20;
+    whatCentury = 2000;
+  } else if (month >= 41 && month <= 52) {
+    actualMonth = month - 40;
+    whatCentury = 2100;
   }
 
-  const birthDate = new Date(whatCentury + year, month, day);
+  const birthDate = new Date(whatCentury + year, actualMonth - 1, day);
   if (
     birthDate.getFullYear() !== whatCentury + year ||
-    birthDate.getMonth() !== month ||
+    birthDate.getMonth() !== actualMonth - 1 ||
     birthDate.getDate() !== day
   ) {
-    return { status: false, message: "Invalid date in PESEL" };
+    isDateValid = false;
+  } else {
+    isDateValid = true;
   }
+  return isDateValid
+    ? { status: false, message: "Invalid date in PESEL" }
+    : { status: true, message: "Date in PESEL is Valid" };
 }
 
-console.log(validatePESEL("77110637172"));
-validatePESEL("65091164587");
-validatePESEL("4405140135");
-validatePESEL("abcde123456");
-validatePESEL("12345678901");
+console.log(validatePESEL("77210637172"));
+console.log(validateDate("77210637172"));
 
-console.log(validateDate("77110637172"));
+// console.log(validatePESEL("65091164587"));
+// console.log(validatePESEL("4405140135"));
+// console.log(validatePESEL("abcde123456"));
+// console.log(validatePESEL("12345678901"));
 
-// here place your solution:
+// console.log(validateDate("65091164587"));
+// console.log(validateDate("4405140135"));
+// console.log(validateDate("abcde123456"));
+// console.log(validateDate("12345678901"));
