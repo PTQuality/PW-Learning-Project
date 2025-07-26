@@ -53,43 +53,50 @@ function validateDate(pesel) {
   const month = Number(pesel.slice(2, 4));
   const day = Number(pesel.slice(4, 6));
 
-  let whatCentury = 1900;
-  let actualMonth = 1;
-  let isDateValid = false;
-  if (month <= 12) {
-    whatCentury = 1900;
-  } else if (month >= 21 && month <= 32) {
-    actualMonth = month - 20;
-    whatCentury = 2000;
-  } else if (month >= 41 && month <= 52) {
-    actualMonth = month - 40;
-    whatCentury = 2100;
-  }
+  return validateActualDate(year, month, day);
 
-  const birthDate = new Date(whatCentury + year, actualMonth - 1, day);
-  if (
-    birthDate.getFullYear() !== whatCentury + year ||
-    birthDate.getMonth() !== actualMonth - 1 ||
-    birthDate.getDate() !== day
-  ) {
-    isDateValid = false;
-  } else {
-    isDateValid = true;
+  function validateActualDate(year, month, day) {
+    let whatCentury;
+    let actualMonth;
+    if (month <= 12) {
+      actualMonth = month;
+      whatCentury = 1900;
+    } else if (month >= 21 && month <= 32) {
+      actualMonth = month - 20;
+      whatCentury = 2000;
+    } else if (month >= 41 && month <= 52) {
+      actualMonth = month - 40;
+      whatCentury = 2100;
+    } else {
+      return { status: false, message: "Invalid month date in PESEL" };
+    }
+
+    const birthDate = new Date(whatCentury + year, actualMonth - 1, day);
+    if (
+      birthDate.getFullYear() !== whatCentury + year ||
+      birthDate.getMonth() !== actualMonth - 1 ||
+      birthDate.getDate() !== day
+    ) {
+      return { status: false, message: "Invalid date in PESEL" };
+    }
+    return { status: true, message: "Date in PESEL is Valid" };
   }
-  return isDateValid
-    ? { status: false, message: "Invalid date in PESEL" }
-    : { status: true, message: "Date in PESEL is Valid" };
 }
 
-console.log(validatePESEL("77210637172"));
-console.log(validateDate("77210637172"));
+console.log(validatePESEL("77150637172"));
+console.log(validateDate("77150637172"));
+console.log("-----------------------------");
 
-// console.log(validatePESEL("65091164587"));
-// console.log(validatePESEL("4405140135"));
-// console.log(validatePESEL("abcde123456"));
-// console.log(validatePESEL("12345678901"));
+console.log(validatePESEL("65091164587"));
+console.log(validateDate("65091164587"));
 
-// console.log(validateDate("65091164587"));
-// console.log(validateDate("4405140135"));
-// console.log(validateDate("abcde123456"));
-// console.log(validateDate("12345678901"));
+console.log("-----------------------------");
+console.log(validatePESEL("abcde123456"));
+console.log(validateDate("abcde123456"));
+console.log("-----------------------------");
+console.log(validatePESEL("12345678901"));
+console.log(validateDate("12345678901"));
+console.log("-----------------------------");
+console.log(validatePESEL("4405140135"));
+console.log(validateDate("4405140135"));
+console.log("-----------------------------");
