@@ -50,8 +50,16 @@ class UserManager {
     const usersFilteredByAge = this.users.filter(user => user.age > age);
     return usersFilteredByAge;
   }
-  validateEmail(email) {
-    return true;
+  validateEmail(emailAddress) {
+    let isUnique = true;
+    for (let user of this.users) {
+      if (user.email === emailAddress) {
+        isUnique = false;
+      }
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailRegex.test(emailAddress) && isUnique;
+    return isValid;
   }
 }
 //// DONT MODIFY CODE BELOW!
@@ -63,11 +71,13 @@ const user1 = new User("John Doe", 25, "john@example.com");
 const user2 = new User("Jane Doe", 17, "jane@example.com");
 const user3 = new User("Bob Smith", 30, "bob@example.com");
 const user4 = new User("Alice Johnson", 22, "alice@example.com");
+const user5 = new User("Alice Johnson", 22, "alice@example.com");
 
 manager.addUser(user1); // Add user
 manager.addUser(user2); // Add user
 manager.addUser(user3); // Add user
 manager.addUser(user4); // Add user
+manager.addUser(user5); // Add user
 
 console.log("=== All Users ===");
 manager.displayUsers(); // Display all users
