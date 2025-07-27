@@ -21,32 +21,24 @@ class Contact {
     this.email = email;
   }
 }
+
 class Group {
   constructor(groupName) {
     this.groupName = groupName;
     this.contacts = [];
   }
 }
-class AddressBook {
-  constructor() {
-    this.groups = [];
-  }
-  getContactsByGroup(groupName) {
-    const group = this.groups.find(group => group.groupName === groupName);
 
-    if (group) {
-      return group.contacts;
-    } else {
-      console.log("Such group does not exists");
-      return [];
-    }
+class AddressBook {
+  groups = [];
+
+  getContactsByGroup(groupName) {
+    const searchedGroup = this.groups.find(
+      group => group.groupName === groupName
+    );
+    return searchedGroup.contacts;
   }
 }
-
-let addressBook = new AddressBook();
-let familyGroup = new Group("Family");
-let friendGroup = new Group("Friends");
-let workGroup = new Group("Works");
 
 let contact1 = new Contact("Jan Kowalski", 123456789, "jan@example.com");
 let contact2 = new Contact("Anna Nowak", 987654321, "anna@example.com");
@@ -54,17 +46,20 @@ let contact3 = new Contact("Piotr Wiśniewski", 555666777, "piotr@example.com");
 let contact4 = new Contact("Kasia Zielińska", 444555666, "kasia@example.com");
 let contact5 = new Contact("Paweł Wójcik", 333444555, "pawel@example.com");
 
-familyGroup.contacts.push(contact1);
-familyGroup.contacts.push(contact2);
+let group1 = new Group("Family");
+let group2 = new Group("Friends");
+let group3 = new Group("Work");
 
-friendGroup.contacts.push(contact3);
-friendGroup.contacts.push(contact4);
+group1.contacts.push(contact1);
+group1.contacts.push(contact2);
+group2.contacts.push(contact3);
+group2.contacts.push(contact4);
+group3.contacts.push(contact5);
 
-workGroup.contacts.push(contact5);
-
-addressBook.groups.push(familyGroup);
-addressBook.groups.push(friendGroup);
-addressBook.groups.push(workGroup);
+let addressBook = new AddressBook();
+addressBook.groups.push(group1);
+addressBook.groups.push(group2);
+addressBook.groups.push(group3);
 
 //// DONT MODIFY CODE BELOW!
 // Here You will find expected result of exercise
