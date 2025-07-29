@@ -1,5 +1,5 @@
 // your task:
-// 1. Declare 4 variables (assign values only to arrays!):
+// 1. Declare 4 variables (assign values only to userIds!):
 // - userName with type string
 // - userId with type number
 // - userNames with type array of strings
@@ -19,6 +19,18 @@
 //// TODO:
 //// -----------------------HERE PLACE YOUR SOLUTION:-------------------------
 
+let userName: string;
+let userId: number;
+const userNames: string[] = [];
+const userIds: number[] = [];
+
+userName = "Bob";
+userId = 412;
+userNames.push(userName);
+userIds.push(userId);
+
+console.log(userNames);
+console.log(userIds);
 //// -----------------------DON'T MODIFY CODE BELOW!-------------------------
 // Here you will find expected result of exercise
 

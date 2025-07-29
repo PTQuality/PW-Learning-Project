@@ -24,6 +24,34 @@
 
 //// TODO:
 //// -----------------------HERE PLACE YOUR SOLUTION:-------------------------
+function formatStrings(pageName: string, componentName: string): string {
+  return `Opening page '${pageName}' and checking '${componentName}'`;
+}
+
+const formatStringsOutput: string = formatStrings("LoginPage", "UserName");
+
+const formatStringAnonymous = function (
+  pageName: string,
+  componentName: string
+): string {
+  return `Opening page '${pageName}' and checking '${componentName}'`;
+};
+
+const formatStringsAnonymousOutput: string = formatStringAnonymous(
+  "HomePage",
+  "UserName"
+);
+
+const formatStringsArrow = (pageName: string, componentName: string): string =>
+  `Opening page '${pageName}' and checking '${componentName}'`;
+
+const formatStringsArrowOutput: string = formatStringsArrow(
+  "ContactPage",
+  "UserName"
+);
+console.log(formatStringsOutput);
+console.log(formatStringsAnonymousOutput);
+console.log(formatStringsArrowOutput);
 
 //// -----------------------DON'T MODIFY CODE BELOW!-------------------------
 // Here you will find expected result of exercise
