@@ -16,28 +16,36 @@
 // npm run ex2-4
 
 function getRandomValue(primaryIndex: number, secondaryIndex: number): string {
-    const anArray = [
-        ["11", "12"],
-        ["21", "22"]
-    ]
-    return anArray[primaryIndex][secondaryIndex]
+  const anArray = [
+    ["11", "12"],
+    ["21", "22"],
+  ];
+  return anArray[primaryIndex][secondaryIndex];
 }
 
 //// TODO:
 //// -----------------------HERE PLACE YOUR SOLUTION:-------------------------
 
-function getRandomValueProxy(primaryIndex: number, secondaryIndex: number): string {
-    return getRandomValue(primaryIndex, secondaryIndex)
+function getRandomValueProxy(
+  primaryIndex: number,
+  secondaryIndex: number
+): string {
+  try {
+    return getRandomValue(primaryIndex, secondaryIndex);
+  } catch (error) {
+    console.log("An error occurred!");
+  }
+  return "error!";
 }
 
 //// -----------------------DON'T MODIFY CODE BELOW!-------------------------
 // Here you will find expected result of exercise
 
-console.log("Result for: [1, 1]", getRandomValueProxy(1, 1))
-console.log("Result for: [3, 1]", getRandomValueProxy(3, 1))
-console.log("Result for: [111, 421]", getRandomValueProxy(111, 421))
-console.log("Result for: [2, 2]", getRandomValueProxy(2, 2))
-console.log("Result for: [0, 0]", getRandomValueProxy(0, 0))
+console.log("Result for: [1, 1]", getRandomValueProxy(1, 1));
+console.log("Result for: [3, 1]", getRandomValueProxy(3, 1));
+console.log("Result for: [111, 421]", getRandomValueProxy(111, 421));
+console.log("Result for: [2, 2]", getRandomValueProxy(2, 2));
+console.log("Result for: [0, 0]", getRandomValueProxy(0, 0));
 
 // Expected output:
 // On console 👀 you should see:

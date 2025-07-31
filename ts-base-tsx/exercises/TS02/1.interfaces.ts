@@ -18,6 +18,35 @@
 //// TODO:
 //// -----------------------HERE PLACE YOUR SOLUTION:-------------------------
 
+interface UserData {
+  id: number;
+  fullName: string;
+  pass: string;
+  data?: string;
+}
+
+let user1: UserData = {
+  id: 1,
+  fullName: "John",
+  pass: "1234",
+  data: "Some data",
+};
+
+let user2: UserData = {
+  id: 2,
+  fullName: "Bob",
+  pass: "4321",
+};
+
+console.log(user1);
+console.log(user2);
+
+user1.id = 2;
+user2.id = 1;
+
+console.log(user1);
+console.log(user2);
+
 //// -----------------------DON'T MODIFY CODE BELOW!-------------------------
 // Here you will find expected result of exercise
 

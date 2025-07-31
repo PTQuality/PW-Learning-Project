@@ -23,6 +23,25 @@
 //// TODO:
 //// -----------------------HERE PLACE YOUR SOLUTION:-------------------------
 
+class TransactionData {
+  id: string = "";
+  version: number;
+  constructor(id: string) {
+    this.id = id;
+    this.version = 0;
+  }
+  doOperation(): number {
+    console.log("Last value of version: " + this.version);
+    return ++this.version;
+  }
+}
+const transactionData = new TransactionData("0");
+transactionData.doOperation();
+transactionData.doOperation();
+transactionData.doOperation();
+const lastResult = transactionData.doOperation();
+console.log(lastResult);
+
 //// -----------------------DON'T MODIFY CODE BELOW!-------------------------
 // Here you will find expected result of exercise
 
