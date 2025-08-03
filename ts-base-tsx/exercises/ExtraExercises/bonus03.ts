@@ -36,6 +36,7 @@
 // Failed to save log
 // Logger cleanup completed
 
+// npm run bonus03
 //// TODO: Place your solution here
 
 type LogSuccessCallback = (message: string) => void;

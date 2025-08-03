@@ -14,15 +14,18 @@
 // to test your solution in terminal you can run following command:
 // npm run ex3-1
 
-const values = [8, 4, 3, 4, 2, -2, 2]
-let largestValue
+const values = [8, 4, 3, 4, 2, -2, 2];
+let largestValue;
 //// TODO:
 //// -----------------------HERE PLACE YOUR SOLUTION:-------------------------
+
+import { getBiggestNumber } from "./helpers/data.helpers";
+largestValue = getBiggestNumber(values);
 
 //// -----------------------DON'T MODIFY CODE BELOW!-------------------------
 // Here you will find expected result of exercise
 
-console.log("Largest value of ", values, " is ", largestValue)
+console.log("Largest value of ", values, " is ", largestValue);
 
 // Expected output:
 // On console 👀 you should see:
@@ -32,4 +35,4 @@ console.log("Largest value of ", values, " is ", largestValue)
 //   ]  is  8
 
 // Ignore this line - used to be able to redeclare variables in this project
-export {}
+export {};

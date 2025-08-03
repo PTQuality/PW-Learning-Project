@@ -22,7 +22,9 @@
 // Text is valid: Hello World
 // Text too short! Minimum length: 5
 
+// npm run bonus02
 //// TODO: Place your solution here
+
 
 type SuccessCallback = (text: string) => void;
 type IssueCallback = (issue: string) => void;

@@ -1,5 +1,6 @@
 // Create NotificationCallback type and sendNotification function
 // that accepts a message and callback, then calls callback with formatted message
+// npm run bonus01
 
 type NotificationCallback = (message: string) => void;
 
