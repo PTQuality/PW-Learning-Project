@@ -48,6 +48,7 @@ enum Category {
   Food = "Food",
   Electronics = "Electronics",
 }
+
 interface OrderItem {
   name: string;
   price: number;
@@ -56,42 +57,40 @@ interface OrderItem {
 }
 
 class Order {
-  items: OrderItem[];
+  itemList: OrderItem[];
+  BOOK_DISCOUNT = 0.9;
+  ELECTRONICS_DISCOUNT = 0.85;
   constructor() {
-    this.items = [];
+    this.itemList = [];
   }
-  addItem(item: OrderItem) {
-    this.items.push(item);
+  public addItem(item: OrderItem) {
+    this.itemList.push(item);
   }
-
-  calculateItemTotal(){
-    
-  }
-
-  calculateTotal(): number {
-    let total = 0;
-
-    for (let item of this.items) {
-      let itemTotal = item.price * item.quantity;
-
-      if (item.category === Category.Book) {
-        itemTotal = itemTotal * 0.9;
-      } else if (item.category === Category.Electronics && itemTotal > 2000) {
-        itemTotal = itemTotal * 0.85;
-      }
-
-      total += itemTotal;
+  private calculateItemPrice(item: OrderItem): number {
+    let itemPrice: number;
+    if (item.category === Category.Book) {
+      itemPrice = item.price * item.quantity * this.BOOK_DISCOUNT;
+    } else if (item.category === Category.Electronics && item.price > 2000) {
+      itemPrice = item.price * item.quantity * this.ELECTRONICS_DISCOUNT;
+    } else {
+      itemPrice = item.price * item.quantity;
     }
+    return itemPrice;
+  }
 
+  public calculateTotal(): number {
+    let total = 0;
+    for (let item of this.itemList) {
+      total += this.calculateItemPrice(item);
+    }
     return total;
   }
-  summary(): string {
-    let result = "";
-
-    for (let item of this.items) {
-      result += `${item.name} x ${item.quantity} = ${item.price * item.quantity} \n`;
+  public summary() {
+    let report = "";
+    for (let item of this.itemList) {
+      report += `${item.name} x ${item.quantity} = ${this.calculateItemPrice(item)} zł \n`;
     }
-    return result + "Final total: " + this.calculateTotal() + " zł";
+    return report + `Final total: ${this.calculateTotal()} zł`;
   }
 }
 
