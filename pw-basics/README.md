@@ -42,3 +42,4 @@
 - Preview: for README.md
 - Autosave: in File -> Auto Save
 - Timeline: file context menu
+- Formating: editor -> context menu -> Format document
