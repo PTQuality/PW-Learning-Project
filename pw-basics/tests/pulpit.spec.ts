@@ -1,15 +1,16 @@
 import { test, expect } from "@playwright/test";
 import { loginData } from "../test-data/login.data";
+import { LoginPage } from "../pages/login.page";
 test.describe("Pulpit tests", () => {
-  const userId = loginData.userId;
-  const userPassword = loginData.userPassword;
-
   test.beforeEach(async ({ page }) => {
     //Login
-    await page.goto("/");
-    await page.getByTestId("login-input").fill(userId);
-    await page.getByTestId("password-input").fill(userPassword);
-    await page.getByTestId("login-button").click();
+    const userId = loginData.userId;
+    const userPassword = loginData.userPassword;
+
+    const loginPage = new LoginPage(page);
+    await loginPage.loginInput.fill(userId);
+    await loginPage.passwordInput.fill(userPassword);
+    await loginPage.loginButton.click();
   });
   test("quick payment with correct data", async ({ page }) => {
     // Arrange
@@ -51,7 +52,7 @@ test.describe("Pulpit tests", () => {
     await expect(page.locator("#money_value")).toHaveText(`${expectedBalance}`);
   });
 
-    test("successful balance change after transfer", async ({ page }) => {
+  test("successful balance change after transfer", async ({ page }) => {
     // Arrange
     const mobilePhoneNumber = "500 xxx xxx";
     const topUpAmount = "50";
