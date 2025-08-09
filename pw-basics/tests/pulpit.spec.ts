@@ -1,12 +1,11 @@
 import { test, expect } from "@playwright/test";
 test.describe("Pulpit tests", () => {
-  const url = "https://demo-bank.vercel.app/";
   const userId = "testerLO";
   const userPassword = "123456789";
 
   test.beforeEach(async ({ page }) => {
     //Login
-    await page.goto(url);
+    await page.goto("/");
     await page.getByTestId("login-input").fill(userId);
     await page.getByTestId("password-input").fill(userPassword);
     await page.getByTestId("login-button").click();
@@ -37,6 +36,8 @@ test.describe("Pulpit tests", () => {
     const mobilePhoneNumber = "500 xxx xxx";
     const topUpAmount = "50";
     const expectedMessage = `Doładowanie wykonane! ${topUpAmount},00PLN na numer ${mobilePhoneNumber}`;
+    const initialBalance = await page.locator("#money_value").innerText();
+    const expectedBalance = Number(initialBalance) - Number(topUpAmount);
 
     //Act
     await page
@@ -48,6 +49,6 @@ test.describe("Pulpit tests", () => {
     await page.getByTestId("close-button").click();
 
     //Assert
-    await expect(page.locator("#show_messages")).toHaveText(expectedMessage);
+    await expect(page.locator("#money_value")).toHaveText(`${expectedBalance}`);
   });
 });
