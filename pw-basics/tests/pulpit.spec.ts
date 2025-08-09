@@ -6,6 +6,7 @@ test.describe("Pulpit tests", () => {
     //Login
     const userId = loginData.userId;
     const userPassword = loginData.userPassword;
+    page.goto("/");
 
     const loginPage = new LoginPage(page);
     await loginPage.loginInput.fill(userId);
