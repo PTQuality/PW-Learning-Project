@@ -6,30 +6,32 @@ import { PaymentPage } from "../pages/payment.page";
 import { PulpitPage } from "../pages/pulpit.page";
 
 test.describe("Payment tests", () => {
+  let loginPage: LoginPage;
+  let pulpitPage: PulpitPage;
+  let paymentPage: PaymentPage;
+
   test.beforeEach(async ({ page }) => {
+    loginPage = new LoginPage(page);
+    pulpitPage = new PulpitPage(page);
+    paymentPage = new PaymentPage(page);
+
     const userId = loginData.userId;
     const userPassword = loginData.userPassword;
 
     await page.goto("/");
-    const loginPage = new LoginPage(page);
-    await loginPage.loginInput.fill(userId);
-    await loginPage.passwordInput.fill(userPassword);
-    await loginPage.loginButton.click();
+    await loginPage.login(userId, userPassword);
+    await paymentPage.sideMenu.paymentMenu.click();
   });
 
   test("simplePayment", async ({ page }) => {
     //Arrange
-    const paymentPage = new PaymentPage(page);
-    const pulpitPage = new PulpitPage(page);
 
     //Act
-    await pulpitPage.paymentMenu.click();
-    await paymentPage.transferReceiver.click();
-    await paymentPage.transferReceiver.fill(paymentData.transferReceiver);
-    await paymentPage.formAccountTo.fill(paymentData.transferAccount);
-    await paymentPage.formAmount.fill(paymentData.transferAmount);
-    await paymentPage.buttonMakePayment.click();
-    await paymentPage.buttonCloseModal.click();
+    await paymentPage.makeTransfer(
+      paymentData.transferReceiver,
+      paymentData.transferAccount,
+      paymentData.transferAmount
+    );
 
     //Assert
     await expect(pulpitPage.showMessage).toHaveText(
